@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +14,7 @@
 <body>
     <?php include "./inclide/header.php";?>
     <?php include "./inclide/nav.php";?>
-    <?php include "./inclide/sidebar.php";?>
+    <!-- <?php include "./inclide/sidebar.php";?> -->
 <div class="content">
 <form action="./api/check_login.php" method="post">
 <!-- table>tr*4>td+td>input:text  快捷 -->

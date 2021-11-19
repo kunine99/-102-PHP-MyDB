@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['user'])){
+  header("location:index.php");
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +27,9 @@
 <?php
 $dsn="mysql:host=localhost;charset=utf8;dbname=member_test";
 $pdo=new PDO($dsn,'root','');
-$sql="SELECT * FROM `account`,`member` WHERE `account`.`id`=`member`.`id` && `account`.`account`='{$_GET['user']}'";
+// $sql="SELECT * FROM `account`,`member` WHERE `account`.`id`=`member`.`id` && `account`.`account`='{$_GET['user']}'";
+$sql="SELECT * FROM `account`,`member` WHERE `account`.`id`=`member`.`id` && `account`.`account`='{$_SESSION['user']}'";
+
 $user=$pdo->query($sql)->fetch();
 
 

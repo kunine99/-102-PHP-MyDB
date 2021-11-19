@@ -1,9 +1,7 @@
-<?php
+<!-- <?php
 // 要session之前要記得session start
-
-
-
-?>
+session_start();
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,15 +30,40 @@
     </style>
 </head>
 <body>
-    <nav>
-    <?php
+<!-- <nav>
+        <?php
 
-if(isset($_GET['err'])){
-    echo "帳號或密碼錯誤，請重新登入";
-}
-?>
+        // if(isset($_GET['err'])){
+        //     echo "帳號或密碼錯誤，請重新登入";
+        // }
+        ?>
         <a href="reg.php"><button>註冊新會員</button></a>
         <a href="login.php"><button>點我登入</button></a>
+    </nav> -->
+    <nav>
+        <?php
+
+        if(isset($_GET['err'])){
+            echo "帳號或密碼錯誤，請重新登入";
+        }
+        ?>
+        <?php
+        if(isset($_SESSION['user'])){
+         ?>
+            <a href="dashboard.php"><button>會員中心</button></a>
+        <?php
+        }else{   
+       ?>
+        <a href="reg.php"><button>註冊新會員</button></a>
+        <a href="login.php"><button>點我登入</button></a>
+        <?php
+        }
+        ?>
     </nav>
 </body>
 </html>
+
+
+
+<!-- 如果有 我就顯示會員中心
+如果沒有，我就顯示登入系統 -->

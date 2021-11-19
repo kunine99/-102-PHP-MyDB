@@ -20,5 +20,6 @@ $pdo->exec($sql_member);
 //下面要記得戴上使用者的資料不然會錯誤
 // header("location:../dashboard.php);  這是錯誤範例，沒有帶上使用者的資料
 
-header("location:../dashboard.php);
+header("location:../dashboard.php");
+
 ?>
