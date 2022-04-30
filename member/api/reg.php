@@ -2,6 +2,9 @@
 
 //alt+ctrl 垂直選取
 
+
+
+
 $account=$_POST['account'];
 $password=$_POST['password'];
 // $password=md5($_POST['password']);  這會讓密碼以亂碼的方式顯示
@@ -34,12 +37,10 @@ echo "<hr>"; */
 
 //執行寫入資料表的動作
 $pdo->exec($sql_account);
-echo "<hr>";
+// echo "<hr>";
 $pdo->exec($sql_member);
 
 header("location:../index.php");
-
-// header("../location:index.php");
 
 
 

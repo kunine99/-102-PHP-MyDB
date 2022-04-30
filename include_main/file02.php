@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,21 @@
     <title>測試include及require</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<?php include "header.html";?>
+    <?php include "header.html"; ?>
 
-    <!-- <header>11/15 檔案拆分練習</header> -->
-    <?php include "nav.html";?>
+    <?php
+    if(isset($_GET['do'])){
+        include "nav.php"; 
+    }
+    
+    ?>
+    <div class="body">
+        file02的內容
 
-
-<div class="body">file01內容</div>
-
-
-<?php include "footer.html" ?>
-
-<!-- <footer>110pgp資料庫網頁設計班</footer> -->
-
-
+    </div>
+    <?php include "footer.php";?>
 </body>
+
 </html>

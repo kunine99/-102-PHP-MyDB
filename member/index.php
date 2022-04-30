@@ -1,13 +1,15 @@
-<!-- <?php
-// 要session之前要記得session start
+<?php
 session_start();
-?> -->
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>泰山資訊網</title>
     <style>
         *{
@@ -30,16 +32,6 @@ session_start();
     </style>
 </head>
 <body>
-<!-- <nav>
-        <?php
-
-        // if(isset($_GET['err'])){
-        //     echo "帳號或密碼錯誤，請重新登入";
-        // }
-        ?>
-        <a href="reg.php"><button>註冊新會員</button></a>
-        <a href="login.php"><button>點我登入</button></a>
-    </nav> -->
     <nav>
         <?php
 
@@ -50,19 +42,18 @@ session_start();
         <?php
         if(isset($_SESSION['user'])){
          ?>
-            <a href="dashboard.php"><button>會員中心</button></a>
+            <a href="content.php?action=dashboard"><button>會員中心</button></a>
         <?php
         }else{   
        ?>
-        <a href="reg.php"><button>註冊新會員</button></a>
-        <a href="login.php"><button>點我登入</button></a>
+        <a href="content.php?action=reg"><button>註冊新會員</button></a>
+        <a href="content.php?action=login"><button>點我登入</button></a>
         <?php
         }
         ?>
     </nav>
 </body>
 </html>
-
 
 
 <!-- 如果有 我就顯示會員中心
